@@ -37,7 +37,7 @@ class SearhCSV(object):
     for item in dict_list:
       for key, value in item.items():
         if key == search_field and value == search_value:
-          return f"Search key: {key}\tValue: {value}\n{item}"
+          return f"Search key: {key}\tValue: {value}<p>{item}</p>"
         else:
            continue
         # if key != search_field:
