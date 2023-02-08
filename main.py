@@ -36,11 +36,15 @@ class SearhCSV(object):
         dict_list = list(reader)
     for item in dict_list:
       for key, value in item.items():
-        if key != search_field:
-          continue
+        if key == search_field and value == search_value:
+          return f"Search key: {key}\tValue: {value}\n{item}"
         else:
-          if value == search_value:
-            return f"Search key: {key}\tValue: {value}\n{item}"
+           continue
+        # if key != search_field:
+        #   continue
+        # else:
+        #   if value == search_value:
+        #     return f"Search key: {key}\tValue: {value}\n{item}"
 
 if __name__ == '__main__':
     cherrypy.quickstart(SearhCSV())
